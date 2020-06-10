@@ -9,14 +9,32 @@
     <div class="grid-container">
       <header class="header">
         <div class="brand">
-          <a href="index.html">Talassa</a>
+          <button onclick="openMenu()">
+            &#9776
+          </button>
+          <a href="index.html">
+            Talassa
+          </a>
+          <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">  
         </div>
         <div class="header-links">
           <a href="cart.html">Cart</a>
           <a href="signin.html">SignIn</a>
         </div>
       </header>
-      <aside>Shopping Categories</aside>
+      <aside class="sidebar">
+        <h3>Shopping Categories</h3>
+        <button class="sidebar-close-button" onclick="closeMenu()">x</button>
+        <ul>
+          <li>
+            <a href="index.html">Sneakers</a>
+          </li>
+
+          <li>
+            <a href="index.html">T-shirt</a>
+          </li>
+        </ul>
+      </aside>
       <main class="main">
         <div class="content">
           <ul class="products">
@@ -98,5 +116,14 @@
         All right reserved.
       </footer>
     </div>
+    <script>
+      function openMenu() {
+        document.querySelector(".sidebar").classList.add("open")
+      }
+
+      function closeMenu() {
+        document.querySelector(".sidebar").classList.remove("open")
+      }
+    </script>
   </body>
 </html>
