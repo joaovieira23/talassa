@@ -1,5 +1,7 @@
 import React from 'react';
+import data from './data';
 import './App.css';
+
 
 function App() {
 
@@ -41,73 +43,21 @@ function App() {
       <main class="main">
         <div class="content">
           <ul class="products">
-            <li>
-              <div class="product">
-                <img class="product-image" src="/images/d1.png" alt="product" />
+            {
+              data.products.map(product => 
+                <li>
+                  <div class="product">
+                <img class="product-image" src={product.image} alt="product" />
                 <div class="product-name">
-                  <a href="product.html">Air Max 270 React Masculino</a>
+                  <a href="product.html">{product.name}</a>
                 </div>
-                <div class="product-brand">Nike</div>
-                <div class="product-price">$300</div>
-                <div class="product-rating">4.8 start (127 Reviews)</div>
-              </div>
-            </li>
-            <li>
-              <div class="product">
-                <img class="product-image" src="/images/d1.png" alt="product" />
-                <div class="product-name">
-                  <a href="product.html">Air Max 270 React Masculino</a>
-                </div>
-                <div class="product-brand">Nike</div>
-                <div class="product-price">$300</div>
-                <div class="product-rating">4.8 start (127 Reviews)</div>
-              </div>
-            </li>
-            <li>
-              <div class="product">
-                <img class="product-image" src="/images/d1.png" alt="product" />
-                <div class="product-name">
-                  <a href="product.html">Air Max 270 React Masculino</a>
-                </div>
-                <div class="product-brand">Nike</div>
-                <div class="product-price">$300</div>
-                <div class="product-rating">4.8 start (127 Reviews)</div>
-              </div>
-            </li>
-            <li>
-              <div class="product">
-                <img class="product-image" src="/images/d1.png" alt="product" />
-                <div class="product-name">
-                  <a href="product.html">Air Max 270 React Masculino</a>
-                </div>
-                <div class="product-brand">Nike</div>
-                <div class="product-price">$300</div>
-                <div class="product-rating">4.8 start (127 Reviews)</div>
-              </div>
-            </li>
-            <li>
-              <div class="product">
-                <img class="product-image" src="/images/d1.png" alt="product" />
-                <div class="product-name">
-                  <a href="product.html">Air Max 270 React Masculino</a>
-                </div>
-                <div class="product-brand">Nike</div>
-                <div class="product-price">$300</div>
-                <div class="product-rating">4.8 start (127 Reviews)</div>
-              </div>
-            </li>
-            <li>
-              <div class="product">
-                <img class="product-image" src="/images/d1.png" alt="product" />
-                <div class="product-name">
-                  <a href="product.html">Air Max 270 React Masculino</a>
-                </div>
-                <div class="product-brand">Nike</div>
-                <div class="product-price">$300</div>
-                <div class="product-rating">4.8 start (127 Reviews)</div>
-              </div>
-            </li>
-
+                <div class="product-brand">{product.brand}</div>
+                <div class="product-price">{product.price}</div>
+                <div class="product-rating">{product.rating} Stars ({product.numReviews}) </div>
+                 </div>
+                 </li>  
+              )
+            } 
           </ul>
         </div>
 
