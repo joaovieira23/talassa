@@ -8,7 +8,8 @@ export default  {
     price: 500,
     brand: 'Nike',
     rating: 4.8,
-    numReviews: 127
+    numReviews: 127,
+    countInStock: 6,
   },
   {
     _id: '2',
@@ -18,7 +19,8 @@ export default  {
     price: 99,
     brand: 'Nike',
     rating: 4.7,
-    numReviews: 98
+    numReviews: 98,
+    countInStock: 8,
   },
   {
     _id: '3',
@@ -28,7 +30,8 @@ export default  {
     price: 300,
     brand: 'Nike',
     rating: 4.9,
-    numReviews: 265
+    numReviews: 265,
+    countInStock: 5,
   },
   {
     _id: '4',
@@ -38,7 +41,8 @@ export default  {
     price: 350,
     brand: 'Nike',
     rating: 4.9,
-    numReviews: 265
+    numReviews: 265,
+    countInStock: 10,
   },
 ]
 }
