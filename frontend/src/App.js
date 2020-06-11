@@ -1,6 +1,8 @@
 import React from 'react';
-import data from './data';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 import './App.css';
+import HomeScreen from './Screens/HomeScreen';
+import ProductScreen from './Screens/ProductScreen';
 
 
 function App() {
@@ -12,23 +14,24 @@ function App() {
     document.querySelector(".sidebar").classList.remove("open")
   }
   return (
-    <div class="grid-container">
-      <header class="header">
-        <div class="brand">
+  <BrowserRouter>
+    <div className="grid-container">
+      <header className="header">
+        <div className="brand">
           <button onClick={openMenu}>
             &#9776;
         </button>
-          <a href="index.html">Talassa</a>
+        <Link to="/" style={{fontSize: "35px", marginLeft: "10px"}}>Talassa</Link>
           <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"></link>
         </div>
-        <div class="header-links">
-          <a href="cart.html">Cart</a>
-          <a href="signin.html">Sign In</a>
+        <div className="header-links">
+          <a href="cart.html" className="cart-style" >Cart</a>
+          <a href="signin.html" className="signin-style">Sign In</a>
         </div>
       </header>
-      <aside class="sidebar">
+      <aside className="sidebar">
         <h3>Shopping Categories</h3>
-        <button class="sidebar-close-button" onClick={closeMenu}>x</button>
+        <button className="sidebar-close-button" onClick={closeMenu}>x</button>
         <ul>
           <li>
             <a href="index.html">Pants</a>
@@ -40,32 +43,19 @@ function App() {
 
         </ul>
       </aside>
-      <main class="main">
-        <div class="content">
-          <ul class="products">
-            {
-              data.products.map(product => 
-                <li>
-                  <div class="product">
-                <img class="product-image" src={product.image} alt="product" />
-                <div class="product-name">
-                  <a href="product.html">{product.name}</a>
-                </div>
-                <div class="product-brand">{product.brand}</div>
-                <div class="product-price">{product.price}</div>
-                <div class="product-rating">{product.rating} Stars ({product.numReviews}) </div>
-                 </div>
-                 </li>  
-              )
-            } 
-          </ul>
+      <main className="main">
+        <div className="content">
+          <Route path="/product/:id" component={ProductScreen} />
+          <Route path="/" exact={true} component={HomeScreen} />
+          
         </div>
 
       </main>
-      <footer class="footer">
+      <footer className="footer">
         All right reserved.
     </footer>
     </div>
+  </BrowserRouter>
   );
 }
 
