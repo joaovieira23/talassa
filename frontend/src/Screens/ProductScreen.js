@@ -22,7 +22,8 @@ function ProductScreen(props) {
   return <div>
     <div className="back-to-result">
         <Link to="/">
-          Back to result
+            {/* <FiArrowLeft /> */}
+            Back to result
         </Link>
     </div>
     {loading ? <div>Loading...</div> :
@@ -35,13 +36,13 @@ function ProductScreen(props) {
         <div className="details-info">
           <ul>
             <li>
-              <h4>{product.name}</h4>
+              <h4 className="title-product">{product.name}</h4>
             </li>
             <li>
               {product.rating} Stars ({product.numReviews} Reviews)
             </li>
             <li>
-              Price: <b>${product.price}</b>
+              <h3 style={{ fontSize: "25px" }}>Price: <b>${product.price}</b></h3>
             </li>
             <li>
               Description:
@@ -60,9 +61,9 @@ function ProductScreen(props) {
               Status: {product.countInStock > 0 ? "In Stock": "Unavailable"}
             </li>
             <li>
-              Qty: <select value={qty} onChange={(e) => {setQty(e.target.value)}}>
+              Qty: <select className="appearance-select" value={qty} onChange={(e) => {setQty(e.target.value)}}>
                 {[...Array(product.countInStock).keys()].map(x => 
-                  <option key={ x + 1 } value={x + 1}>{ x + 1 }</option>
+                  <option style={{ fontSize:"16px" }} key={ x + 1 } value={x + 1}>{ x + 1 }</option>
                   )}
               </select>
             </li>
