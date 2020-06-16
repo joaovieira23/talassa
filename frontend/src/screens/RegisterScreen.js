@@ -12,14 +12,12 @@ function RegisterScreen(props) {
   const userRegister = useSelector(state => state.userRegister);
   const { loading, userInfo, error } = userRegister;
   const dispatch = useDispatch();
+  const redirect = props.location.search ? props.location.search.split("=")[1] : '/'
 
   useEffect(() => {
     if (userInfo) {
-      props.history.push("/");
+      props.history.push(redirect);
     }
-    return () => {
-      //
-    };
   }, [userInfo]);
 
   const submitHandler = (e) => {
@@ -62,10 +60,11 @@ function RegisterScreen(props) {
           </input>
         </li>
         <li>
-          <button type="submit" className="button primary">Register</button>
+          <button type="submit" style={{ width: "320px" }} className="button primary">Register</button>
         </li>
         <li>
-          Already have an account? <Link to="/signin">Sign-In</Link>
+          Already have an account?
+          <Link to={redirect === "/" ? "signin" : "signin?redirect=" + redirect} className="button secondary text-center" style={{ width: "300px", height: "28px" }} >Create your Talassa account</Link>
         </li>
 
       </ul>

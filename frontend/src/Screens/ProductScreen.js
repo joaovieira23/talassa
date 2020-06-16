@@ -45,8 +45,8 @@ function ProductScreen(props) {
               <h3 style={{ fontSize: "25px" }}>Price: <b>${product.price}</b></h3>
             </li>
             <li>
-              Description:
-              <div>
+              Description: <br/><br/>
+              <div style={{ fontSize: "18px" }}>
                 {product.description}
               </div>
             </li>
