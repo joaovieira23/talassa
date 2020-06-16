@@ -299,6 +299,7 @@ a:hover {
   background-color: #f0f0f0; 
   border-radius: .5rem;
   padding: 1rem;
+  /* margin-top: 80px; */
 }
 
 .cart-list-container {
@@ -334,6 +335,7 @@ align-items: flex-end;
 
 .cart-name {
   flex: 8 1;
+  font-size: 20 px;
 }
 
 .cart-price {
@@ -397,4 +399,28 @@ input {
   padding: 1rem;
   border: .1rem #c0c0c0 solid;
   border-radius: .5rem;
-} 
+}
+
+/* Products */
+
+.product-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.content-margined{
+  margin: 1rem;
+}
+
+.table{
+  width: 100%;
+}
+
+th{
+  text-align: left;
+}
+
+tbody>tr:nth-child(odd){
+  background-color: #f0f0f0;
+}
